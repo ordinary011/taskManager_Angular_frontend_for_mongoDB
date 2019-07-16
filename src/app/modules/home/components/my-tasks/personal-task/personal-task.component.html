@@ -1,0 +1,19 @@
+<div *ngIf="!isUpdate">
+  <h3>
+    {{ taskInput.task.taskText }} | <i>{{ taskInput.info }}</i>
+  </h3>
+  <div class="options">
+        <button (click)="edit()">Edit</button>
+        <button (click)="deleteTask()">Delete</button>
+        <form #shareForm="ngForm">
+          <input type="text" name="emailOfRecipient" email required ngModel />
+          <button (click)="shareTask(shareForm)">Share by email</button>
+        </form>
+  </div>
+</div>
+
+<form #updateForm="ngForm" *ngIf="isUpdate">
+  <input type="text" name="editedTask" required ngModel />
+  <button (click)="editTask(updateForm)">Update</button>
+</form>
+<hr />

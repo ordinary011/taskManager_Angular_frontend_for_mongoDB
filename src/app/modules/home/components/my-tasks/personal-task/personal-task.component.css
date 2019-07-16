@@ -1,0 +1,20 @@
+h3{
+    color: green;
+}
+
+i{
+    color:skyblue
+}
+
+.options{
+    display:flex;
+    margin-bottom: 20px
+}
+
+.options button{
+    margin-right: 5px;
+}
+
+.options form{
+    margin-left: 20px;
+}

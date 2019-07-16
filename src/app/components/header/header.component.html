@@ -1,0 +1,16 @@
+<header class="header">
+  <h1>TASK MANAGER</h1>
+  <nav>
+    <div *ngIf="!isLogged">
+      <a routerLink="/start/logIn">Log In</a> | <a routerLink="/start/signUp">Sign up</a>
+    </div>
+
+    <div class="logged" *ngIf="isLogged">
+      <div>
+        <a routerLink="/home/myTasks">My tasks</a> | 
+        <a routerLink="/home">Main page</a>
+      </div>
+      <a routerLink="/start/logIn" (click)="logOut()">Log Out</a>
+    </div>
+  </nav>
+</header>

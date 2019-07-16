@@ -1,0 +1,19 @@
+<h2>Hi {{ name }}!</h2>
+
+<div *ngIf="tasks.length > 0">
+  <h2>Here are your tasks for today:</h2>
+  <app-personal-task *ngFor="let task of tasks" [taskInput]="task"
+  (taskToUpdate)="editTask($event)"
+  (taskToDelete)="delTask($event)"
+  (taskToShare)="shareTask($event)"
+  ></app-personal-task>
+</div>
+
+<h2 *ngIf="tasks.length < 1">There are no tasks for you</h2>
+
+<form #taskForm="ngForm">
+  <input type="text" name="taskText" required ngModel />
+  <button (click)="addTask(taskForm)">Add a new task</button>
+</form>
+
+
